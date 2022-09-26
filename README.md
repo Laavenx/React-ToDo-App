@@ -1,4 +1,3 @@
 # ToDo react-app
 
-```npm start
-```
+`npm start`
