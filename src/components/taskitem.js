@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from "framer-motion";
-import "../styles/item.css";
+import styles from "../styles/item.module.scss";
 
 const element = <FontAwesomeIcon icon={faTrashCan} size="2x" />
 
 export default function Item(props) {
-    const [isRemoved, setIsRemoved] = useState(true);
+    const [isRemoved, setIsRemoved] = useState(false);
 
     const handleRemove = function () {
         props.onRemove();
-        setIsRemoved(false);
+        setIsRemoved(true);
     };
 
     return (
         <AnimatePresence>
-            {isRemoved && (
+            {!isRemoved && (
                 <motion.div
                     initial={{ opacity: 0, y: "-40%" }}
                     animate={{ opacity: 1, y: "0%" }}
@@ -30,11 +30,13 @@ export default function Item(props) {
                     }}
                 >
                     <div
-                        className="content">
-                        <div className="content-text">
-                            {props.name}
+                        className={styles.content}>
+                        <div className={styles["content-text"]}>
+                            <div className={styles["content-text-wrapper"]}>
+                                {props.name}
+                            </div>
                         </div>
-                        <div className="trash-icon" onClick={handleRemove}>
+                        <div className={styles["trash-icon"]} onClick={handleRemove}>
                             {element}
                         </div>
                     </div>

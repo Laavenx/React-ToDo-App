@@ -6,6 +6,16 @@ body {
   background-color: rgb(237, 230, 230);
 }
 
-input[type="text"] {
+:root {
   font-size: 18px;
+  font-family: Garamond, serif;
+}
+
+input {
+  font-size: 18px;
+  font-family: Garamond, serif;
+}
+
+form {
+  display: flex;
 }

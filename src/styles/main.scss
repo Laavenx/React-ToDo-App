@@ -1,0 +1,32 @@
+@import "./variables.scss";
+
+main {
+    @include flex(center, center);
+    flex-direction: column;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    height: 100%;
+}
+
+.task-wrapper {
+    @include flex('', center);
+    box-shadow: $box-shadow-main;
+    border-radius: 13px;
+    width: 95%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    min-height: 100px;
+}
+
+.task-create {
+    @include flex();
+    box-shadow: $box-shadow-main;
+    border-radius: 13px;
+    width: 95%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+.task-input {
+    border: none;
+    width: 260px;
+    box-shadow: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.task-input-wrapper {
+    display: flex;
+    border-radius: 18px;
+    height: 40px;
+    width: 300px;
+    margin-right: 5px;
+    border: 2px solid rgb(35, 35, 35);
+    background-color: $background-secondary;
+}
+
+.submit {
+    font-size: 34px;
+}
+
+.cross {
+    font-size: 20px;
+}
+
+.task-submit-button {
+    @include flex(center, '', '');
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.task-input-clear {
+    @include flex();
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}

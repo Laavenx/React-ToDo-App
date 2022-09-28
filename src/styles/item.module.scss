@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .trash-icon {
     margin-left: auto;
     margin-right: 12px;
@@ -6,14 +8,12 @@
 }
 
 .content {
+    @include flex(center, center, '');
     margin: 5px 5px 5px 5px;
     border-radius: 18px;
-    background-color: rgb(243, 243, 243);
+    background-color: $background-secondary;
     box-sizing: border-box;
     border: solid 2px grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 300px;
     height: 50px;
     transition: 0.3s;
@@ -26,5 +26,13 @@
 }
 
 .content-text {
+    @include flex(center, '', '');
+    height: 50px;
     margin-left: 5px;
+    overflow: hidden;
+}
+
+.content-text-wrapper {
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

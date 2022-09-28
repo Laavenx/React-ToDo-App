@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "../styles/main.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
 import TaskItem from "./taskitem.js";
+import TaskForm from "./taskform.js";
 import { v4 } from "uuid";
-
-const enter = <FontAwesomeIcon icon={faArrowRight} size="2x" className="submit" />
+import "../styles/main.scss";
 
 export default function Main() {
     const [taskList, setTaskList] = useState([]);
@@ -18,7 +15,6 @@ export default function Main() {
                 }
             ));
         }, 150);
-        console.log(taskList);
     };
 
     const handleSubmit = function (event) {
@@ -36,19 +32,9 @@ export default function Main() {
     return (
         <main>
             <div className="task-create">
-                <form onSubmit={handleSubmit}>
-                    <input
-                        name="taskText"
-                        className="task-input"
-                        type="text"
-                        placeholder="Input a task here!"
-                        minLength="1"
-                        maxLength="28"
-                    />
-                    <button className="task-submit-button">
-                        {enter}
-                    </button>
-                </form>
+                <TaskForm
+                    handleSubmit={(e) => handleSubmit(e)}
+                />
             </div>
             <div className="task-wrapper">
                 {taskList.map((task) => (

@@ -1,0 +1,15 @@
+$background-secondary: rgb(243, 243, 243);
+$box-shadow-main: 0px 4px 18px -7px rgba(66, 68, 90, 1);
+
+@mixin flex($align: center, $justify: center, $wrap: wrap) {
+    display: flex;
+    @if $align != '' {
+        align-items: $align;
+    }
+    @if $justify != '' {
+        justify-content: $justify;
+    }
+    @if $wrap != '' {
+        flex-wrap: $wrap;
+    }
+  }
