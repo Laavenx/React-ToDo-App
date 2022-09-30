@@ -1,11 +1,8 @@
 @import "./variables.scss";
 
 main {
-    @include flex(center, center);
+    @include flex(center, '');
     flex-direction: column;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
     height: 100%;
 }
 
@@ -13,7 +10,7 @@ main {
     @include flex('', center);
     box-shadow: $box-shadow-main;
     border-radius: 13px;
-    width: 95%;
+    width: 92%;
     max-width: 1200px;
     background-color: white;
     padding: 10px 10px 10px 10px;
@@ -22,11 +19,60 @@ main {
 
 .task-create {
     @include flex();
+    margin-top: 2%;
     box-shadow: $box-shadow-main;
     border-radius: 13px;
-    width: 95%;
+    width: 92%;
     max-width: 1200px;
     background-color: white;
     padding: 10px 10px 10px 10px;
     margin-bottom: 10px;
+}
+
+.popup {
+    @include flex(center, '');
+    flex-direction: column;
+    top: 23%;
+    position: fixed;
+    z-index: 9999;
+    width: 90%;
+    max-width: 500px;
+    height: 150px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid grey;
+    pointer-events: auto;
+
+    h2 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+}
+
+.cross-wrapper {
+    @include flex();
+    margin-left: auto;
+    margin-right: 4px;
+    margin-top: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.cross {
+    font-size: 23px;
+}
+
+.block {
+    pointer-events: none;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.55);
+
+    .task-create {
+        opacity: 0.6;
+    }
+
+    .task-wrapper {
+        opacity: 0.6;
+    }
 }

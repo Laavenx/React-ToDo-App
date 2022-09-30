@@ -1,0 +1,32 @@
+@import "./variables.scss";
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: $background-main;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+#root {
+  height: 100%;
+}
+
+:root {
+  height: 100%;
+  font-size: 18px;
+  font-family: Garamond, serif;
+}
+
+input {
+  font-size: 18px;
+  font-family: Garamond, serif;
+}
+
+form {
+  display: flex;
+}

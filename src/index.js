@@ -1,12 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
+import './styles/index.scss';
 import Main from "./components/main.js"
 import Header from "./components/header.js"
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-  <div>
+  <div className="App">
     <Header/>
     <Main/>
   </div>

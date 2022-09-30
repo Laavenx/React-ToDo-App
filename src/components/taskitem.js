@@ -9,8 +9,8 @@ const element = <FontAwesomeIcon icon={faTrashCan} size="2x" />
 export default function Item(props) {
     const [isRemoved, setIsRemoved] = useState(false);
 
-    const handleRemove = function () {
-        props.onRemove();
+    const handleRemove = function (e) {
+        props.onRemove(e);
         setIsRemoved(true);
     };
 
@@ -30,7 +30,9 @@ export default function Item(props) {
                     }}
                 >
                     <div
-                        className={styles.content}>
+                        className={styles.content}
+                        onClick={props.onClick}
+                        >
                         <div className={styles["content-text"]}>
                             <div className={styles["content-text-wrapper"]}>
                                 {props.name}

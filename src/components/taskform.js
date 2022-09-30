@@ -7,10 +7,11 @@ const enter = <FontAwesomeIcon icon={faArrowRight} size="2x" className={styles.s
 const cross = <FontAwesomeIcon icon={faXmark} className={styles.cross} />
 
 export default function TaskForm(props) {
-    const [taskInput, setTaskInput] = useState("");
+    const [taskInput, setTaskInput] = useState(props.currentText);
 
     const handleInputChange = function (event) {
-        setTaskInput(event.target.value)
+        setTaskInput(event.target.value);
+        console.log(props.currentText);
     }
 
     const deleteInput = () => {
@@ -18,28 +19,30 @@ export default function TaskForm(props) {
     }
 
     return (
-        <form onSubmit={props.handleSubmit}>
-            <div className={styles["task-input-wrapper"]}>
-                <input
-                    name="taskText"
-                    className={styles["task-input"]}
-                    type="text"
-                    placeholder="Input a task here!"
-                    minLength="1"
-                    maxLength="28"
-                    value={taskInput}
-                    onChange={handleInputChange}
-                />
-                <div
-                    className={styles["task-input-clear"]}
-                    onClick={deleteInput}
-                >
-                    {cross}
+        <div>
+            <form onSubmit={props.handleSubmit}>
+                <div className={styles["task-input-wrapper"]}>
+                    <input
+                        name="taskText"
+                        className={styles["task-input"]}
+                        type="text"
+                        placeholder="Input a task here!"
+                        minLength="1"
+                        maxLength="28"
+                        value={taskInput}
+                        onChange={handleInputChange}
+                    />
+                    <div
+                        className={styles["task-input-clear"]}
+                        onClick={deleteInput}
+                    >
+                        {cross}
+                    </div>
                 </div>
-            </div>
-            <button className={styles["task-submit-button"]}>
-                {enter}
-            </button>
-        </form>
+                <button className={styles["task-submit-button"]}>
+                    {enter}
+                </button>
+            </form>
+        </div>
     );
 };

@@ -5,6 +5,9 @@ header {
     color: white;
     background-color: rgb(40, 41, 41);
     height: 65px;
+    position: sticky;
+    z-index: 500;
+    top: 0;
 
     div {
         @include flex();
